@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4726E910-7682-44C9-8A44-2AF7D515D06E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EI.Plc.Tests</RootNamespace>
+    <AssemblyName>ei.plc.lib.tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>communication.tests.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Plc\Converters\Common\IntConverterTest.cs" />
+    <Compile Include="Plc\Converters\Common\BoolConverterTest.cs" />
+    <Compile Include="Plc\Converters\Common\IntHexConverterTest.cs" />
+    <Compile Include="Plc\Converters\Common\StringConverterTest.cs" />
+    <Compile Include="Plc\Converters\FromStreamConverters\BaseFromStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\FromStreamConverters\Common\BoolFromStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\FromStreamConverters\Demount\DemountStatusFromStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\FromStreamConverters\Mount\MountStatusFromStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\FromStreamConverters\Polishing\PolishingStatusFromStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\FromStreamConverters\Polishing\PolisherStatusFromStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\FromStreamConverters\Stocker\StockerStatusFromStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Common\BoolToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Common\IntToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Demount\ChangeCassetteToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Demount\EmptyCarrierPlateRoutingToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Demount\StartDemountingToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Mount\ClearingNewLotStartToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Mount\LotCassetteInfoToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Mount\LotDataTransmissionToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Mount\LotWaferInfoToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Mount\WafersToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Polishing\ProcessRecipeToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Stocker\CarrierPlateRoutingToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Stocker\MagazineSelectionToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\Stocker\StockerInventoryToStreamConverterTest.cs" />
+    <Compile Include="Plc\Converters\ToStreamConverters\BaseToStreamConverterTest.cs" />
+    <Compile Include="Plc\Mount\MountPlcTest.cs" />
+    <Compile Include="Plc\Command\PlcMemoryNegAcknowledgeTest.cs" />
+    <Compile Include="Plc\AddressSpace\PlcAddressSpaceTest.cs" />
+    <Compile Include="Plc\AddressSpace\PlcAddressRangeTest.cs" />
+    <Compile Include="Plc\PlcHelper.cs" />
+    <Compile Include="Plc\Command\PlcMemoryReadDataTest.cs" />
+    <Compile Include="Plc\Command\PlcStreamTest.cs" />
+    <Compile Include="Plc\Demount\DemountPlcTest.cs" />
+    <Compile Include="Plc\BasePlcTest.cs" />
+    <Compile Include="Plc\Command\PlcMemoryAcknowledgeTest.cs" />
+    <Compile Include="Plc\Command\PlcMemoryCommandTest.cs" />
+    <Compile Include="Plc\Command\PlcMemoryReadCommandTest.cs" />
+    <Compile Include="Plc\Command\PlcCommandTest.cs" />
+    <Compile Include="Plc\Command\PlcMemoryWriteCommandTest.cs" />
+    <Compile Include="Plc\Polishing\PolishingPlcTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Plc\Stocker\StockerPlcTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ei.business\ei.business.csproj">
+      <Project>{E235C09B-25F6-42F5-9E83-87ABD90D63A0}</Project>
+      <Name>ei.business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ei.plc.lib\ei.plc.lib.csproj">
+      <Project>{5FF25147-A488-4058-8FFD-21E5AFA47718}</Project>
+      <Name>ei.plc.lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="communication.tests.snk" />
+    <None Include="packages.config" />
+    <Shadow Include="Test References\ei.plc.lib.accessor" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

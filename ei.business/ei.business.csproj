@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E235C09B-25F6-42F5-9E83-87ABD90D63A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MP1.Foundation</RootNamespace>
+    <AssemblyName>ei.business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>foundation.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="communication\ICommunicationBuffered.cs" />
+    <Compile Include="communication\IRs232Communication.cs" />
+    <Compile Include="communication\ICommunication.cs" />
+    <Compile Include="configuration\BcrAppConfig.cs" />
+    <Compile Include="configuration\BcrParserConfig.cs" />
+    <Compile Include="configuration\BcrConfig.cs" />
+    <Compile Include="configuration\IBcrParserConfig.cs" />
+    <Compile Include="configuration\IBcrConfig.cs" />
+    <Compile Include="configuration\Rs232AppConfig.cs" />
+    <Compile Include="configuration\Rs232Config.cs" />
+    <Compile Include="data\CarrierPlateStage.cs" />
+    <Compile Include="exceptions\DbOperationFailedException.cs" />
+    <Compile Include="exceptions\PromisException.cs" />
+    <Compile Include="exceptions\DbErrorCode.cs" />
+    <Compile Include="exceptions\DbException.cs" />
+    <Compile Include="exceptions\PlcErrorCode.cs" />
+    <Compile Include="exceptions\PlcException.cs" />
+    <Compile Include="configuration\IRs232Config.cs" />
+    <Compile Include="communication\PlcCommunicationStatus.cs" />
+    <Compile Include="exceptions\WcfException.cs" />
+    <Compile Include="logging\ILogger.cs" />
+    <Compile Include="plc\entities\demount\CarrierPlateRoutingType.cs" />
+    <Compile Include="plc\entities\demount\DemountCassetteHopper.cs" />
+    <Compile Include="plc\entities\demount\DemountCassetteStation.cs" />
+    <Compile Include="plc\entities\demount\DemountInfo.cs" />
+    <Compile Include="plc\entities\demount\DemountState.cs" />
+    <Compile Include="plc\entities\demount\DemountStatus.cs" />
+    <Compile Include="plc\entities\demount\IDemountInfo.cs" />
+    <Compile Include="plc\entities\demount\IDemountStatus.cs" />
+    <Compile Include="plc\entities\mount\Cassette.cs" />
+    <Compile Include="plc\entities\mount\ICassette.cs" />
+    <Compile Include="plc\entities\mount\ILotData.cs" />
+    <Compile Include="plc\entities\mount\IMountStatus.cs" />
+    <Compile Include="plc\entities\mount\INewLotCassette.cs" />
+    <Compile Include="plc\entities\mount\INewLotStart.cs" />
+    <Compile Include="plc\entities\mount\IWafer.cs" />
+    <Compile Include="plc\entities\mount\IWaferAssembly.cs" />
+    <Compile Include="plc\entities\mount\LotData.cs" />
+    <Compile Include="plc\entities\mount\LotDataTransmission.cs" />
+    <Compile Include="plc\entities\mount\MountLine.cs" />
+    <Compile Include="plc\entities\mount\MountState.cs" />
+    <Compile Include="plc\entities\mount\MountStatus.cs" />
+    <Compile Include="plc\entities\mount\NewLotCassette.cs" />
+    <Compile Include="plc\entities\mount\NewLotStart.cs" />
+    <Compile Include="plc\entities\mount\OfType.cs" />
+    <Compile Include="plc\entities\mount\PolishDivision.cs" />
+    <Compile Include="plc\entities\mount\Wafer.cs" />
+    <Compile Include="plc\entities\mount\WaferAssembly.cs" />
+    <Compile Include="plc\entities\polishing\CarrierPlate.cs" />
+    <Compile Include="plc\entities\polishing\ICarrierPlate.cs" />
+    <Compile Include="plc\entities\polishing\IMagazine.cs" />
+    <Compile Include="plc\entities\polishing\IPolisherFullStatus.cs" />
+    <Compile Include="plc\entities\polishing\IPolisherHead.cs" />
+    <Compile Include="plc\entities\polishing\IPolisherLiquid.cs" />
+    <Compile Include="plc\entities\polishing\IPolisherShortStatus.cs" />
+    <Compile Include="plc\entities\polishing\IPolishingFullStatus.cs" />
+    <Compile Include="plc\entities\polishing\IPolishingShortStatus.cs" />
+    <Compile Include="plc\entities\polishing\Magazine.cs" />
+    <Compile Include="plc\entities\polishing\Polisher.cs" />
+    <Compile Include="plc\entities\polishing\PolisherFullStatus.cs" />
+    <Compile Include="plc\entities\polishing\PolisherHead.cs" />
+    <Compile Include="plc\entities\polishing\PolisherLiquid.cs" />
+    <Compile Include="plc\entities\polishing\PolisherShortStatus.cs" />
+    <Compile Include="plc\entities\polishing\PolisherState.cs" />
+    <Compile Include="plc\entities\polishing\PolishingFullStatus.cs" />
+    <Compile Include="plc\entities\polishing\PolishingShortStatus.cs" />
+    <Compile Include="plc\entities\stocker\CarrierPlateRouting.cs" />
+    <Compile Include="plc\entities\stocker\IMagazineChangeRequest.cs" />
+    <Compile Include="plc\entities\stocker\IMagazineRequest.cs" />
+    <Compile Include="plc\entities\stocker\IStockerStatus.cs" />
+    <Compile Include="plc\entities\stocker\MagazineChangeRequest.cs" />
+    <Compile Include="plc\entities\stocker\MagazineRequest.cs" />
+    <Compile Include="plc\entities\stocker\MagazineSelection.cs" />
+    <Compile Include="plc\entities\stocker\StockerInventory.cs" />
+    <Compile Include="plc\entities\stocker\StockerStatus.cs" />
+    <Compile Include="plc\entities\WaferSize.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="foundation.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

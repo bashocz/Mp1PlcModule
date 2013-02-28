@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E88EE587-BEF3-47CF-98A1-2E51019B8258}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MP1.Plc</RootNamespace>
+    <AssemblyName>ei.plc.simulator</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>communication.simulator.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Demount\CassetteSensorSimulator.cs" />
+    <Compile Include="Data\Mount\CassetteSimulator.cs" />
+    <Compile Include="Data\Mount\WaferSimulator.cs" />
+    <Compile Include="Data\Polishing\PolisherLiquidSimulator.cs" />
+    <Compile Include="Data\Polishing\PolisherHeadSimulator.cs" />
+    <Compile Include="Data\Polishing\PolishingPlateSimulator.cs" />
+    <Compile Include="Memory\BaseMemory.cs" />
+    <Compile Include="BaseSimulatorPlcCommunication.cs" />
+    <Compile Include="Memory\BoolMemory.cs" />
+    <Compile Include="Memory\DoubleMemory.cs" />
+    <Compile Include="Memory\IntMemory.cs" />
+    <Compile Include="Memory\PlcMemory.cs" />
+    <Compile Include="Data\Polishing\PolisherStatusSimulator.cs" />
+    <Compile Include="Data\Polishing\PolisherPlateSimulator.cs" />
+    <Compile Include="PlcSimulatorManager.cs" />
+    <Compile Include="Plc\Demount\DemountSimulatorPlcCommunication.cs" />
+    <Compile Include="Plc\Mount\MountSimulatorPlcCommunication.cs" />
+    <Compile Include="Plc\Stocker\StockerSimulatorPlcCommunication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Plc\Polishing\PolishingSimulatorPlcCommunication.cs" />
+    <Compile Include="Memory\StringMemory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="communication.simulator.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ei.business\ei.business.csproj">
+      <Project>{E235C09B-25F6-42F5-9E83-87ABD90D63A0}</Project>
+      <Name>ei.business</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

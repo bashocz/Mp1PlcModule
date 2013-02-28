@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C1DC6F58-5917-434E-ACDC-4DABA6A4B3C0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EI.Plc.Tests</RootNamespace>
+    <AssemblyName>ei.plc.simulator.tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>communication.simulator.tests.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Integration\DemountSimulatorPlcTest.cs" />
+    <Compile Include="Plc\Demount\DemountSimulatorPlcCommunicationTest.cs" />
+    <Compile Include="Integration\MountSimulatorPlcTest.cs" />
+    <Compile Include="Integration\StockerSimulatorPlcTest.cs" />
+    <Compile Include="Memory\IntMemoryTest.cs" />
+    <Compile Include="Memory\DoubleMemoryTest.cs" />
+    <Compile Include="Memory\BoolMemoryTest.cs" />
+    <Compile Include="Memory\BaseMemoryTest.cs" />
+    <Compile Include="BaseSimulatorPlcCommunicationTest.cs" />
+    <Compile Include="Memory\PlcMemoryTest.cs" />
+    <Compile Include="Data\Polishing\PolisherHeadSimulatorTest.cs" />
+    <Compile Include="Data\Polishing\PolisherLiquidSimulatorTest.cs" />
+    <Compile Include="Data\Polishing\PolisherPlateSimulatorTest.cs" />
+    <Compile Include="Data\Polishing\PolisherStatusSimulatorTest.cs" />
+    <Compile Include="Integration\PolishingSimulatorPlcTest.cs" />
+    <Compile Include="Plc\Mount\MountSimulatorPlcCommunicationTest.cs" />
+    <Compile Include="Plc\Polishing\PolishingSimulatorPlcCommunicationTest.cs" />
+    <Compile Include="Data\Polishing\PolishingPlateSimulatorTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Memory\StringMemoryTest.cs" />
+    <Compile Include="SimulatorHelper.cs" />
+    <Compile Include="Plc\Stocker\StockerSimulatorPlcCommunicationTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="communication.simulator.tests.snk" />
+    <None Include="packages.config" />
+    <Shadow Include="Test References\ei.plc.simulator.accessor" />
+    <Shadow Include="Test References\ei.plc.lib.accessor" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ei.business\ei.business.csproj">
+      <Project>{E235C09B-25F6-42F5-9E83-87ABD90D63A0}</Project>
+      <Name>ei.business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ei.plc.lib\ei.plc.lib.csproj">
+      <Project>{5FF25147-A488-4058-8FFD-21E5AFA47718}</Project>
+      <Name>ei.plc.lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ei.plc.simulator\ei.plc.simulator.csproj">
+      <Project>{E88EE587-BEF3-47CF-98A1-2E51019B8258}</Project>
+      <Name>ei.plc.simulator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
